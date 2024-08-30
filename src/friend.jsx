@@ -1,7 +1,6 @@
 export default function Friend({friend}){ //friend here is prop. it contains single object as a result of .map iterations of an array of objects 
 
     const {name, email, address: {city}} = friend; // destructuring 
-
     //css:
     const singleStyles = {
         borderRadius: '10px',

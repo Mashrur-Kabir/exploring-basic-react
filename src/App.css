@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.orderedListStyle{
+  text-align: justify;
+}
+
+.orderedListStyle span{
+  font-weight: 700;
+  margin-right: 5px;
+  color:mediumorchid ;
+}

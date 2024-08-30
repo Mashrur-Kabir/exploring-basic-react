@@ -18,18 +18,24 @@ export default function Friends(){
     useEffect(()=> {
         fetch('https://jsonplaceholder.typicode.com/users')
        .then(response => response.json())
-       .then(data => setUsers(data))
+       .then(data => setUsers(data)) // set data to state for update
     }, []) //The empty dependency array [] tells React to run this effect only once
 
     return(
         <div style={friendStyles}>
             <h3>Friends: {users.length}</h3>
             {
-                users.map(friend => <Friend friend={friend}></Friend>) //sending data of every individual 'friend' obj to the <Friend/> component
+                users.map(friend => <Friend key={friend.id} friend={friend}></Friend>) //sending data of every individual 'friend' obj to the <Friend/> component
             }
         </div>
     )
 }
+
+/*  #1: create state to load data 
+    #2: create useEffect with no dependencies
+    #3: use fetch to load data and trigger re-render
+    #4. extract objects from array using .map and send them by calling another component (<Friend>) via props
+    */
 
 /* 
 What is rendering? Rendering is the process where React calls a component to update the user interface (UI) based on changes in data, state, or props. When a component is rendered, it generates the necessary HTML elements to reflect the current state of the application.

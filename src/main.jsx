@@ -5,6 +5,6 @@ import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App /> {/* entry level component */}
+    <App /> {/* entry level component; getting mounted in 'root'*/}
   </StrictMode>,
 )
